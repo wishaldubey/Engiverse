@@ -1,5 +1,5 @@
 # Engiverse
-A p-latfom for Engineers
+A platfom for Engineers
 Live Demo: https://iam-vishaldubey.github.io/
 
 # Installation
