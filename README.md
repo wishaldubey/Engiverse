@@ -1,6 +1,6 @@
 # Engiverse
 A platfom for Engineers
-Live Demo: https://iam-vishaldubey.github.io/
+Live Demo: https://iam-vishaldubey.github.io/Engiverse
 
 # Installation
 * 1 - clone repo https://github.com/iam-vishaldubey/Engiverse.git
