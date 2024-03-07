@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <div id="logreg-forms">
+        <form class="form-signin">
+            <div class="social-login">
+                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+            </div>
+        </form>
+        <br>
+    </div>
+
+    <!-- Include Firebase JavaScript SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js';
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js';
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCbVc-z2-0Gx7NWjvhX1rrH4Arcn5hxSaU",
+            authDomain: "engiverse-c6ca1.firebaseapp.com",
+            projectId: "engiverse-c6ca1",
+            storageBucket: "engiverse-c6ca1.appspot.com",
+            messagingSenderId: "345916674787",
+            appId: "1:345916674787:web:55621566b852704b87ebd6",
+            measurementId: "G-CXBRXYPV75"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const firestore = getFirestore(app);
+
+        // Function to handle Google Sign-In
+        function googleSignIn() {
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    // Signed in successfully, get user info
+                    const user = result.user;
+                    console.log(user);
+                    window.location.href = "index.html";
+
+
+                })
+                .catch((error) => {
+                    // Handle errors here
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error(errorCode, errorMessage);
+                });
+        }
+
+        // Attach click event listener to Google Sign-In button
+        const googleBtn = document.querySelector('.google-btn');
+        googleBtn.addEventListener('click', googleSignIn);
+    </script>
+</body>
+</html>
