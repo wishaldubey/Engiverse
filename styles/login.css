@@ -13,8 +13,8 @@
   background-image: url("google.png");
   background-color: rgb(255, 255, 255);
   background-repeat: no-repeat;
-  background-position: 12px 10px; /* Adjusted background position for mobile view */
-  background-size: 24px 24px; /* Adjusted size to fit inside the button */
+  background-position: 19px 15px; /* Adjusted background position for mobile view */
+  background-size: 38px 38px; /* Adjusted size to fit inside the button */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,7 +22,7 @@
   line-height: 1.4; /* Adjusted line height for mobile view */
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 768px) {
   .google-btn {
     padding: 20px 24px 20px 56px; /* Adjusted padding for larger screens */
     border-radius: 30px; /* Adjusted for larger screens */
