@@ -22,7 +22,7 @@
   line-height: 1.4; /* Adjusted line height for mobile view */
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
   .google-btn {
     padding: 20px 24px 20px 56px; /* Adjusted padding for larger screens */
     border-radius: 30px; /* Adjusted for larger screens */
