@@ -1,98 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Room</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/lobby.css">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="styles/main.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="styles/lobby.css"
+    />
+  </head>
+  <body>
     <header id="nav">
-       <div class="nav--list">
-            <a href="index1.html">
-                <h3 id="logo">
-                    <img src="images/engiverse.png" alt="Site Logo" >
-                </h3>
-            </a>
-       </div>
+      <div class="nav--list">
+        <a href="index1.html">
+          <h3 id="logo">
+            <img src="images/engiverse.png" alt="Site Logo" />
+          </h3>
+        </a>
+      </div>
 
-        <div id="nav__links">
-            <a class="nav__link" href="/">
-                Lobby
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24"><path d="M20 7.093v-5.093h-3v2.093l3 3zm4 5.907l-12-12-12 12h3v10h7v-5h4v5h7v-10h3zm-5 8h-3v-5h-8v5h-3v-10.26l7-6.912 7 6.99v10.182z"/></svg>
-            </a>
-            <a class="nav__link" id="create__room__btn" href="index1.html">
-                Create or Join Room
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
-            </a>
-        </div>
+      <div id="nav__links">
+        <a class="nav__link" href="/">
+          Lobby
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="#ede0e0"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 7.093v-5.093h-3v2.093l3 3zm4 5.907l-12-12-12 12h3v10h7v-5h4v5h7v-10h3zm-5 8h-3v-5h-8v5h-3v-10.26l7-6.912 7 6.99v10.182z"
+            />
+          </svg>
+        </a>
+        <a class="nav__link" id="create__room__btn" href="index1.html">
+          Create or Join Room
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="#ede0e0"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"
+            />
+          </svg>
+        </a>
+      </div>
     </header>
 
     <main id="room__lobby__container">
-        <div id="form__container">
-             <div id="form__container__header">
-                <p>Welcome, <span id="user-name"></span> 
-                    😎
-                </p>
-                
-
-             </div>
- 
-            <form id="lobby__form">
-                 
- 
-                 <div class="form__field__wrapper">
-                     <label>Topic</label>
-                     <input type="text" name="room"  placeholder="Enter room name..." />
-                 </div>
- 
-                 <div class="form__field__wrapper">
-                     <button type="submit">Go to Room 
-                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
-                    </button>
-                 </div>
-            </form>
+      <div id="form__container">
+        <div id="form__container__header">
+          <p>
+            Welcome, <span id="user-name"></span>
+            😎
+          </p>
         </div>
-     </main>
-    
-   <!-- Include Firebase JavaScript SDK -->
-   <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js';
-    import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js';
-    import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js';
 
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
+        <form id="lobby__form">
+          <div class="form__field__wrapper">
+            <label>Hello</label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Enter your display name..."
+              readonly
+            />
+          </div>
+
+          <div class="form__field__wrapper">
+            <label>Topic</label>
+            <input type="text" name="room" placeholder="Enter topic name..." />
+          </div>
+
+          <div class="form__field__wrapper">
+            <button type="submit">
+              Go to Room
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Include Firebase JavaScript SDK -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+      import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithPopup,
+      } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
         apiKey: "AIzaSyCbVc-z2-0Gx7NWjvhX1rrH4Arcn5hxSaU",
         authDomain: "engiverse-c6ca1.firebaseapp.com",
         projectId: "engiverse-c6ca1",
         storageBucket: "engiverse-c6ca1.appspot.com",
         messagingSenderId: "345916674787",
         appId: "1:345916674787:web:55621566b852704b87ebd6",
-        measurementId: "G-CXBRXYPV75"
-    };
+        measurementId: "G-CXBRXYPV75",
+      };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const firestore = getFirestore(app);
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const firestore = getFirestore(app);
 
-
-    // Check if user is logged in and display their name
-    auth.onAuthStateChanged(function(user) {
+      // Check if user is logged in and display their name
+      auth.onAuthStateChanged(function (user) {
         if (user) {
-            // User is signed in, display their name
-            const userName = document.getElementById('user-name');
-            userName.textContent = user.displayName;
+          // User is signed in, display their name
+          const userName = document.getElementById("user-name");
+          userName.textContent = user.displayName;
         } else {
-            // User is not signed in, redirect to login page
-            window.location.href = 'login.html';
+          // User is not signed in, redirect to login page
+          window.location.href = "index.html";
         }
-    });
+      });
     </script>
-</body>
-<script type="text/javascript" src="js/lobby.js"></script>
-
+  </body>
+  <script type="module" src="js/lobby.js"></script>
 </html>
