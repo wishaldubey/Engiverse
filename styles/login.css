@@ -50,10 +50,8 @@ h1 {
   margin-top: 12%;
   font-size: 4em;
   text-transform: uppercase; /* Convert text to uppercase */
-  color: rgb(255, 255, 255); /* Text color */
-  text-shadow: 0 0 3px #ffd700, 0 0 7px #ffd700, 0 0 10px #ffd700,
-    0 0 12px #ffd700, 0 0 20px #ffd700, 0 0 22px #ffd700, 0 0 25px #ffd700,
-    0 0 30px #ffd700; /* Neon golden text glow effect */
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
 }
 @media screen and (max-width: 1080px) {
   h1 {
@@ -62,5 +60,21 @@ h1 {
     text-shadow: 0 0 2px #ffd700, 0 0 5px #ffd700, 0 0 8px #ffd700,
       0 0 10px #ffd700, 0 0 15px #ffd700, 0 0 18px #ffd700, 0 0 20px #ffd700,
       0 0 25px #ffd700; /* Adjusted neon golden text glow effect for smaller screens */
+      animation: flicker 1.5s infinite alternate;
+
   }
+}
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+    text-shadow: 0 0 3px #ffd700, 0 0 7px #ffd700, 0 0 10px #ffd700,
+    0 0 12px #ffd700, 0 0 20px #ffd700, 0 0 22px #ffd700, 0 0 25px #ffd700,
+    0 0 30px #ffd700; /* Neon golden text glow effect */
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
 }
